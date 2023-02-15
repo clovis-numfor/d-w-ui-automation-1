@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="tests" name="DemoSuite">
+    <test thread-count="1" parallel="classes" name="DemoTest">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.sat.fashition.kiemtradangnhap.TC_M_3_1Test" />
+            <class name="com.sat.fashition.kiemtradangnhap.TC_M_3_2Test" />
+            <class name="com.sat.fashition.kiemtradangnhap.TC_M_3_3Test" />
+        </classes>
+        <!-- <packages>
+            <package name="com.sat.example"/>
+        </packages> -->
+    </test>
+</suite> <!-- Suite -->
