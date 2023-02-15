@@ -23,6 +23,6 @@ jobs:
           java-version: "8"
           distribution: adopt
 
-      - name: Installing porject dependencies
+      - name: Installing porject dependencies and test
         run: | 
           mvn clean test -Dsuite=mobileSuites/${{ github.event.inputs.Suite_Name }}
