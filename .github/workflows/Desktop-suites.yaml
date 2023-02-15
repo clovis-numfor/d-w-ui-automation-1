@@ -4,6 +4,14 @@ on:
   push:
     branches: ["main"]
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      Suite_Name:
+        description: 'Job to be run'
+        required: true
+        default: 'FunctionalRegressionSuite'
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
@@ -16,4 +24,4 @@ jobs:
 
       - name: Installing porject dependencies
         run: | 
-          mvn clean test -Dsuite=desktopSuites/${{ secrets.Suite_Name }}
+          mvn clean test -Dsuite=desktopSuites/${{ github.event.inputs.Suite_Name }}
