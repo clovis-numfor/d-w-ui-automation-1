@@ -157,7 +157,7 @@
             <artifactId>allure-environment-writer</artifactId>
             <version>${allure.environment.writer.version}</version>
         </dependency>
-        <dependency>
+        <!-- <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
             <version>${javafaker.version}</version>
@@ -195,6 +195,6 @@
          <artifactId>junit-jupiter</artifactId>
          <version>5.8.2</version>
          <scope>test</scope>
-     </dependency>
+     </dependency> -->
     </dependencies>
 </project>

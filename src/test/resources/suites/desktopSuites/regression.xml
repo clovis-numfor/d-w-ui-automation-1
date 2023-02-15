@@ -4,7 +4,8 @@
     <test thread-count="1" parallel="classes" name="DemoTest">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="com.sat.example1.BookRoomWebTest" />
+            <class name="com.sat.example.TC_01" />
+            <class name="com.sat.example.TC_02" />
         </classes>
     </test>
 </suite> <!-- Suite -->

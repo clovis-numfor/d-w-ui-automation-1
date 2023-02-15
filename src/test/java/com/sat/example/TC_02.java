@@ -1,18 +1,12 @@
-package com.sat.bantheme.dangkydangnhap;
+package com.sat.example;
 
 import org.testng.annotations.Test;
 
-import com.sat.data.BookingDataFactory;
-import com.sat.driver.DriverManager;
-import com.sat.models.Booking;
-import com.sat.utils.BaseTest;
-import com.sat.utils.Utils;
-
-public class TC_02 extends BaseTest {
+public class TC_02 {
 
     @Test
     public void verifyTC02() {
         
-        logger.info("Running testcase 2");
-
+        System.out.println("Running testcase 2");
+    }
 }
