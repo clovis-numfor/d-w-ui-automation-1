@@ -1,0 +1,19 @@
+---
+name: Desktop suites
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: "8"
+          distribution: adopt
+
+      - name: Installing porject dependencies
+        run: | 
+          mvn clean test -Dsuite=desktopSuites/${{ secrets.Suite_Name }}
