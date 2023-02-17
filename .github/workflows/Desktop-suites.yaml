@@ -10,7 +10,7 @@ on:
       Suite_Name:
         description: 'Job to be run'
         required: true
-        default: 'FunctionalRegressionSuite'
+        default: 'FunctionalRegressionSuite.xml'
 
 jobs:
   test:
@@ -25,4 +25,4 @@ jobs:
 
       - name: Installing porject dependencies and test
         run: | 
-          mvn clean test -Dsuite=desktopSuites/${{ github.event.inputs.Suite_Name }}
+          mvn test -DtestngName=${{ github.event.inputs.Suite_Name }}
