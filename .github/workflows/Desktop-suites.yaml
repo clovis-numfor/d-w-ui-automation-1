@@ -2,7 +2,7 @@
 name: Desktop suites
 on:
   push:
-    branches: ["main"]
+    branches: ["artifact"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -22,7 +22,20 @@ jobs:
         with:
           java-version: "8"
           distribution: adopt
-
+      - name: Cache Maven repository
+        uses: actions/cache@v2
+        with:
+         path: ~/.m2
+         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+         restore-keys: ${{ runner.os }}-maven-
       - name: Installing porject dependencies and test
         run: | 
-          mvn test -DtestngName=$"{{ github.event.inputs.Suite_Name }}"
+          mvn test -DtestngName="${{ github.event.inputs.Suite_Name }}"
+      - name: Upload Artifact
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: Extend_report
+          publish_branch: gh-pages
+          path: ./report
+          retention-days: 5
