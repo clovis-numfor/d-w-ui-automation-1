@@ -26,3 +26,10 @@ jobs:
       - name: Installing porject dependencies and test
         run: | 
           mvn test -DtestngName="FunctionalRegressionSuite.xml"
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Extend_report
+          publish_branch: gh-pages
+          path: ./extentReport
+          retention-days: 5
