@@ -27,6 +27,7 @@ jobs:
         run: | 
           mvn test -DtestngName="FunctionalRegressionSuite.xml"
       - name: Upload Artifact
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: Extend_report
