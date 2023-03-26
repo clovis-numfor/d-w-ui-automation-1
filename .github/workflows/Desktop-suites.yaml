@@ -25,4 +25,4 @@ jobs:
 
       - name: Installing porject dependencies and test
         run: | 
-          mvn test -DtestngName=${{ github.event.inputs.Suite_Name }}
+          mvn test -DtestngName=$"{{ github.event.inputs.Suite_Name }}"
