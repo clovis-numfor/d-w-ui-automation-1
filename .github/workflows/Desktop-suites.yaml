@@ -12,8 +12,8 @@ on:
         description: 'Job to be run'
         required: true
         options:
-          - FunctionalRegressionSuite
-          - FunctionalSmokeSuite
+          - 'FunctionalRegressionSuite.xml'
+          - 'FunctionalSmokeSuite.xml'
 
 jobs:
   test:
