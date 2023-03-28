@@ -2,19 +2,22 @@
 name: Desktop suites
 on:
   push:
-    branches: ["artifact"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
       Suite_Name:
+        type: choice
         description: 'Job to be run'
         required: true
-        default: 'FunctionalRegressionSuite.xml'
+        options:
+          - FunctionalRegressionSuite
+          - FunctionalSmokeSuite
 
 jobs:
   test:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.Suite_Name != ''
     steps:
       - uses: actions/checkout@v3
@@ -22,15 +25,11 @@ jobs:
         with:
           java-version: "8"
           distribution: adopt
-      - name: Cache Maven repository
-        uses: actions/cache@v2
-        with:
-         path: ~/.m2
-         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-         restore-keys: ${{ runner.os }}-maven-
+
       - name: Installing porject dependencies and test
         run: | 
-          mvn test -DtestngName="${{ github.event.inputs.Suite_Name }}"
+          mvn clean test -DSuite_Name=${{ github.event.inputs.Suite_Name }}
+          
       - name: Upload Artifact
         if: always()
         uses: actions/upload-artifact@v3
