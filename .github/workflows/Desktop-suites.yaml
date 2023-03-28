@@ -25,6 +25,7 @@ jobs:
         with:
           java-version: "8"
           distribution: adopt
+          cache: 'maven'
 
       - name: Installing porject dependencies and test
         run: | 
@@ -35,5 +36,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Extend_report
-          path: ./report
+          path: report
           retention-days: 5
