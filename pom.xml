@@ -31,10 +31,10 @@
 						<!-- If you want to make pom.xml as parameterised (use for different 
 							testng.xml files -->
 						<!-- Then use below parameterised line for suiteXmlFile -->
-						<suiteXmlFile>${testngName}</suiteXmlFile>
+						<!-- <suiteXmlFile>${testngName}</suiteXmlFile> -->
 						<!-- then use below maven command -->
 						<!-- mvn test -DtestngName="name of your testng.xml file" -->
-						<!-- <suiteXmlFile>FunctionalSmokeSuite.xml</suiteXmlFile> -->
+						<suiteXmlFile>RegressionSuite.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>

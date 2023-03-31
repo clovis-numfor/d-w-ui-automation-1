@@ -13,7 +13,7 @@ import reusableComponents.GenericAppFunctions;
 import setup.DriverManager;
 import util.PropertiesOperations;
 
-public class CartPagesTest extends DriverManager {	
+public class CartPageTest extends DriverManager {	
 	
 	/*
 	 * =============================================================================

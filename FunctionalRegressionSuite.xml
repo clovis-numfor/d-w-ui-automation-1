@@ -13,8 +13,8 @@
 			</run>
 		</groups>
 		<classes>
-			<class name="Tests.CartPagesTest" />
-			<!-- <class name="Tests.CreateAccountPageTest" />
+			<class name="Tests.CartPageTest" />
+			<class name="Tests.CreateAccountPageTest" />
 			<class name="Tests.HomePageTest" />
 			<class name="Tests.LoginPageTest" />
 			<class name="Tests.MiniCartTest" />
@@ -22,7 +22,7 @@
 			<class name="Tests.MyProfileAddressBookTest" />
 			<class name="Tests.MyProfileTest" />
 			<class name="Tests.PDPTest" />
-			<class name="Tests.TestForgotPasswordTest" /> -->
+			<class name="Tests.TestForgotPasswordTest" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

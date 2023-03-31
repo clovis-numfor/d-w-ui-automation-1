@@ -12,12 +12,12 @@ on:
         description: 'Job to be run'
         required: true
         options:
-          - 'FunctionalRegressionSuite.xml'
-          - 'FunctionalSmokeSuite.xml'
+          - FunctionalRegressionSuite
+          - FunctionalSmokeSuite
 
 jobs:
   test:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.Suite_Name != ''
     steps:
       - uses: actions/checkout@v3
@@ -25,11 +25,10 @@ jobs:
         with:
           java-version: "8"
           distribution: adopt
-          cache: 'maven'
 
       - name: Installing porject dependencies and test
         run: | 
-          mvn clean test -DtestngName="${{ github.event.inputs.Suite_Name }}"
+          mvn clean test -DSuite_Name=${{ github.event.inputs.Suite_Name }}
           
       - name: Upload Artifact
         if: always()
