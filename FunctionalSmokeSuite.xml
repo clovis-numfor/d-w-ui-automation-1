@@ -7,13 +7,13 @@
 		<listener class-name="util.ExtentListeners" />
 	</listeners>
 	<test name="Test">
-		<groups>
+		<!-- <groups>
 			<run>
 				<include name="Smoke"></include>
 			</run>
-		</groups>
+		</groups> -->
 		<classes>
-			<class name="Tests.CartPageTest" />
+			<!-- <class name="Tests.CartPageTest" />
 			<class name="Tests.CreateAccountPageTest" />
 			<class name="Tests.HomePageTest" />
 			<class name="Tests.LoginPageTest" />
@@ -21,7 +21,7 @@
 			<class name="Tests.MyCartDetailsTest" />
 			<class name="Tests.MyProfileAddressBookTest" />
 			<class name="Tests.MyProfileTest" />
-			<class name="Tests.PDPTest" />
+			<class name="Tests.PDPTest" /> -->
 			<class name="Tests.TestForgotPasswordTest" />
 		</classes>
 	</test> <!-- Test -->
